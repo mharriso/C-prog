@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int sumDigitsRecursive(int num)
+{
+	if (num > 0)
+		return num%10 + sumDigitsRecursive(num/10);
+	else
+		return 0;
+}
+int sumDigitsRecursive2(int num)
+{
+	return (num > 0) ? (num%10 + sumDigitsRecursive2(num/10)) : 0;
+}
+
+int sumDigitsIteractive(int num)
+{
+	int sum = 0;
+	while (num > 0)
+	{
+		sum = sum + num%10;
+		num = num/10;
+	}
+	return (sum);
+}
+int main ()
+{
+	printf("%d\n", sumDigitsRecursive(12345));
+	printf("%d\n", sumDigitsIteractive(12345));
+	printf("%d\n", sumDigitsRecursive2(12345));
+	return(0);
+}
