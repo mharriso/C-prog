@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int sumDigitsRecursive(int num)//решение рекурсией
+int sumDigitsRecursive(int num)//решение рекурсией, здесь не нужно вводить доп переменную
 {
 	if (num > 0)
 		return num%10 + sumDigitsRecursive(num/10);
@@ -10,7 +10,7 @@ int sumDigitsRecursive(int num)//решение рекурсией
 int sumDigitsRecursive2(int num)//в одну строку, благодаря тернальному оператору
 {
 	return (num > 0) ? (num%10 + sumDigitsRecursive2(num/10)) : 0;
-	       //условие              //если да                     //если нет
+	//проверяется условие, затем вызывается рекурсия если оно выполнилось, либо 0 если нет
 }
 
 int sumDigitsIteractive(int num)//итеративный способ
