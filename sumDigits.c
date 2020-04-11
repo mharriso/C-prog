@@ -24,9 +24,13 @@ int sumDigitsIteractive(int num)//итеративный способ
 	return (sum);
 }
 int main ()
+
 {
-	printf("%d\n", sumDigitsRecursive(12345));
-	printf("%d\n", sumDigitsIteractive(12345));
-	printf("%d\n", sumDigitsRecursive2(12345));
+	int n;
+	printf("Введи, пожалуйста, число: ");
+	scanf("%d", &n);
+	printf("%d\n", sumDigitsIteractive(n));
+	printf("%d\n", sumDigitsRecursive(n));
+	printf("%d\n", sumDigitsRecursive2(n));
 	return(0);
 }
