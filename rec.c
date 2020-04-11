@@ -8,6 +8,10 @@ void rec(int a)
 }
 int main()
 {
-	rec(10);
+	int n;
+	printf("%s", "Введи, пожалуйста, число: ");
+	scanf("%d", &n);
+
+	rec(n);
 	return(0);
 }
