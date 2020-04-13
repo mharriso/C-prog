@@ -43,7 +43,6 @@ int printRevPyramid(int n)
 	return (0);
 
 }
-}
 int main()
 {
 	int n;
