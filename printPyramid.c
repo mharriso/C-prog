@@ -7,12 +7,13 @@ int printPyramid(int n)
 	while (y <= n)
 	{
 		char spaces[n];
-		sprintf(spaces, "%%%dd", n + 1 - y);
+		sprintf(spaces, "%%%dd", n + 2 - y);
 		printf(spaces, y);
-		int x = y;
-		while (--x != 0)
+		int x = y - 1;
+		while (x != 0)
 	        {
 			printf("%2d", y);
+			x--;
 		}
 		printf("\n");
 		y++;
