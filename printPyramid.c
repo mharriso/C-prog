@@ -12,7 +12,7 @@ int printPyramid(int n)
 		printf(spaces, y);
 		int x = y - 1;
 		while (x != 0)
-	    {
+	        {
 			printf("%2d", y);
 			x--;
 		}
@@ -29,12 +29,12 @@ int printRevPyramid(int n)
 	while (y <= n)
 	{
 		char spaces[n];
-		sprintf(spaces, "%%%dd", y + 2);
-		printf(spaces, y);
+		sprintf(spaces, "%%%dd", y + 1);
+		printf(spaces, n + 1 - y);
 		int x = n - y;
 		while (x != 0)
-	    {
-			printf("%2d", y);
+	        {
+			printf("%2d", n + 1 - y);
 			x--;
 		}
 		printf("\n");
