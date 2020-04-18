@@ -14,7 +14,7 @@ int printPyramid(int n, int amt)
 		{
 			if (i == 1)
 			{
-				sprintf(spaces, "%%%dd", n + 2 - y);
+			    sprintf(spaces, "%%%dd", n + 2 - y);
 			    printf(spaces, y);
 			}
 			else
@@ -24,7 +24,7 @@ int printPyramid(int n, int amt)
 			}
 			int x = y - 1;
 			while (x != 0)
-	    	{
+	    		{
 			printf("%s%2d%s", CYAN, y, RESET);
 			x--;
 			}
@@ -49,20 +49,20 @@ int printRevPyramid(int n, int amt)
 		{
 			if (i == 1)
 			{
-				sprintf(spaces, "%%%dd", y + 2);
+			    sprintf(spaces, "%%%dd", y + 2);
 			    printf(spaces, n - y);
 			}
-		    else
+		   	else
 			{
-				sprintf(spaces, "%%%dd", (y + 1)*2);
+			    sprintf(spaces, "%%%dd", (y + 1)*2);
 			    printf(spaces, n - y);
 			}
 			int x = n - 1 - y;
 			while (x != 0)
-	        {
+	        	{
 			printf("%s%2d%s", CYAN, n - y, RESET);
 			x--;
-		    }
+		    	}
 			i++;
 		}
 		printf("\n");
@@ -83,20 +83,20 @@ int printRevPyramidEnd(int n, int amt)
 		{
 			if (i == 1)
 			{
-				sprintf(spaces, "%%%dd", y + 2);
+			    sprintf(spaces, "%%%dd", y + 2);
 			    printf(spaces, n - y);
 			}
-		    else
+		        else
 			{
-				sprintf(spaces, "%%%dd", (y + 1)*2);
+			    sprintf(spaces, "%%%dd", (y + 1)*2);
 			    printf(spaces, n - y);
 			}
 			int x = n - 1 - y;
 			while (x != 0)
-	        {
+	        	{
 			printf("%s%2d%s", CYAN, n - y, RESET);
 			x--;
-		    }
+		    	}
 			i++;
 		}
 		printf("\n");
