@@ -2,7 +2,5 @@
 .vscode/settings.json
 *.out
 test.c
-test
-printPyramid
-diamond
+
 
