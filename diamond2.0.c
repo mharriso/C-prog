@@ -47,7 +47,7 @@ int printRevPyramid(int n, int amt, int end)
 	        {
 			printf("%s%2d%s", CYAN, n - y, RESET);
 			x--;
-		    }
+		}
 			i++;
 		}
 		printf("\n");
@@ -73,9 +73,9 @@ int diamond(int n, int amt, int lines)
 int main()
 {
 	int amt,lines,n;
-	printf("\nПривет!) Будем делать узор!\n\nКакой будет размер одного элемента? : ");
+	printf("\nПривет!) Будем делать узор!\n\nКакой будет размер одного элемента: ");
 	scanf("%d", &n);
-	printf("\nВведите, пожалуйста, количество в строке: ");
+	printf("\nКоличесво элементов в строке: ");
 	scanf("%d", &amt);
 	printf("\nИ еще, пожалуйста, количество строк: ");
 	scanf("%d", &lines);
