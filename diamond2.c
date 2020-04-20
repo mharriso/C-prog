@@ -11,22 +11,20 @@ int printPyramid(int n, int amt)
 		char spaces[n];
 		while (i <= amt)
 		{
-			(i == 1) ? sprintf(spaces, "%%%dd", n + 2 - y) :
-					   sprintf(spaces, "%%%dd", (n + 1 - y)*2);		
-			printf(spaces, y);
-			int x = y - 1;
+		  (i == 1) ? sprintf(spaces, "%%%dd", n + 2 - y) :
+			     sprintf(spaces, "%%%dd", (n + 1 - y)*2);		
+		  printf(spaces, y);
+		  int x = y - 1;
 			while (x != 0)
-	    	{
+	    		{
 			printf("%s%2d%s", CYAN, y, RESET);
 			x--;
 			}
-			i++;
-
+		  i++;
 		}
 		printf("\n");
 		y++;
 	}
-
 	return (0);
 }
 
@@ -39,35 +37,34 @@ int printRevPyramid(int n, int amt, int end)
 		char spaces[n];
 		while (i <= amt)
 		{
-			(i == 1) ? sprintf(spaces, "%%%dd", y + 2) :
-			           sprintf(spaces, "%%%dd", (y + 1)*2);		    
-			printf(spaces, n - y);
-			int x = n - 1 - y;
-			while (x != 0)
-	        {
-			printf("%s%2d%s", CYAN, n - y, RESET);
-			x--;
-		}
-			i++;
+		  (i == 1) ? sprintf(spaces, "%%%dd", y + 2) :
+			     sprintf(spaces, "%%%dd", (y + 1)*2);		    
+		  printf(spaces, n - y);
+		  int x = n - 1 - y;
+		  	while (x != 0)
+	          	{
+		   	printf("%s%2d%s", CYAN, n - y, RESET);
+		   	x--;
+		  	}
+		  i++;
 		}
 		printf("\n");
 		y++;
 	}
 	return (0);
-
 }
 
 int diamond(int n, int amt, int lines)
 {
-	int end;
-		while(lines != 0)
-		{
-			printPyramid(n, amt);
-			(lines == 1) ? (end = n - 1) : (end = n - 2);
-			printRevPyramid(n, amt, end);
-			lines--;
-		}
-	return (0);
+  int end;
+	while(lines != 0)
+	{
+	printPyramid(n, amt);
+	(lines == 1) ? (end = n - 1) : (end = n - 2);
+	printRevPyramid(n, amt, end);
+	lines--;
+	}
+  return (0);
 }
 
 int main()
