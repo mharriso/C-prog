@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+int shortfac(int n)
+{
+  return (n < 2) ? 1 : n * factorial (n - 1);
+}
+
 int recfac(int n)
 {
 	if (n <= 0)
@@ -27,7 +32,7 @@ int main()
 	scanf("%d", &in);
 	printf("%d\n", recfac(in));
 	printf("%d\n", iterfac(in));
-	
+	printf("%d\n", shortfac(in));
 	return(0);
 }
 	
