@@ -8,14 +8,14 @@ double fac(int n)
 
 int main()
 {
-    double e=0;
+    double e=1;
     int n;
     printf("Введите количество: ");
     scanf("%d", &n);
     for (int i=1; i<=n; i++)
     {
         e = e + 1/fac(i);
-        printf("%4d  |  %.8lf\n",i, e + 1);
+        printf("%4d  |  %.8lf\n",i, e);
     }    
     return 0;
 }
