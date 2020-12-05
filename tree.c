@@ -1,10 +1,11 @@
 #include <stdio.h>
-
+#include <unistd.h>
+#include <string.h>
 #define RESET   "\033[0m"  //все атрибуты по умолчанию
 #define BLACK   "\033[30m"  //30-37 цвет текста
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
+#define YELLOW  "\033[33;1m"
 #define BLUE    "\033[34m"
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
@@ -23,33 +24,12 @@
 знаки приобретают цвет фона, а фон цвет знаков*/
 
 
-void print_tree(int space)
-{
-	char s[300];
-	sprintf(s, "%*s", space, "");
-	printf(YELLOW
-		"         *"RESET"\n"
-   GREEN"         1\n"
-		"        212\n"
-		"       32123\n"
-		"      4321234\n"
-		"     543212345\n"
-		"    65432123456\n"
-		"   7654321234567\n"
-		"  876543212345678\n"
-		" 98765432123456789\n"
-		"        212\n"
-		"        212"RESET"\n\n");
-
-}
-
-void tree(n)
+void tree(int n)
 {
 	char spaces[n + 1];
 	sprintf(spaces, "%*s", n, "");
-	printf(YELLOW"%s%s%s\n", spaces, "*", RESET);
-	sprintf(spaces, "%*s", n - 1, "");
-	printf(YELLOW"%s%s%s\n", spaces, "***", RESET);
+
+	printf(YELLOW"%*s%s\n", n + 1, "*", RESET);
 
 	for(int i = 0; i < n; i++)
 	{
@@ -68,9 +48,7 @@ void tree(n)
 }
 int main()
 {
-	for(int i = 0; i < 10; i++)
-	{
+	for(int i = 0; i < 1; i++)
 		tree(10);
-	}
 	return (0);
 }
