@@ -5,7 +5,7 @@
 #define BLACK   "\033[30m"  //30-37 цвет текста
 #define RED     "\033[31m"
 #define GREEN   "\033[32m"
-#define YELLOW  "\033[33;1m"
+#define YELLOW  "\033[33m"
 #define BLUE    "\033[34m"
 #define MAGENTA "\033[35m"
 #define CYAN    "\033[36m"
@@ -24,31 +24,37 @@
 знаки приобретают цвет фона, а фон цвет знаков*/
 
 
-void tree(int n)
+void tree(int n, char *shift)
 {
-	char spaces[n + 1];
-	sprintf(spaces, "%*s", n, "");
+	char *spaces;
+	asprintf(&spaces, "%*s", n, "");
 
-	printf(YELLOW"%*s%s\n", n + 1, "*", RESET);
+	printf(YELLOW"%s%*s%s\n", shift, n + 1, "*", RESET);
+	printf(YELLOW"%s%*s%s\n", shift, n + 2, "***", RESET);
 
 	for(int i = 0; i < n; i++)
 	{
-		sprintf(spaces, "%*s", n - i, "");
+		asprintf(&spaces, "%s%*s", shift, n - i, "");
 		printf("%s", spaces);
 		for(int j = 0; j < i * 2 + 1; j++)
-		{
 			printf(BGREEN" "RESET);
-		}
 		printf("\n");
 	}
-	sprintf(spaces, "%*s", n - 1, "");
+	asprintf(&spaces, "%s%*s", shift, n - 1, "");
 	printf("%s%s%s%s\n", spaces, BYELLOW, "   ", RESET);
-	printf("%s%s%s%s\n\n", spaces, BYELLOW,  "   ", RESET);
+	printf("%s%s%s%s\n", spaces, BYELLOW, "   ", RESET);
 
 }
 int main()
 {
-	for(int i = 0; i < 1; i++)
-		tree(10);
+	int n = 10;
+	char *shift;
+	for(int i = 0; i < 5000; i++)
+	{
+
+		sprintf(shift,"%*s", n * i%6 * n * 3, "");
+		tree(n, shift);
+		sleep(1);
+	}
 	return (0);
 }
